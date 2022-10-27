@@ -12,5 +12,9 @@ app.get('/', function(req, res){
     res.send('Hola, estas en la pagina inicial');
     console.log('Se recibio una petición get');
 });
+app.get('/per', function(req, res){
+    res.send('Hola, estas en la pagina per');
+    console.log('Se recibio una petición get');
+});
 
 app.get('/persona', db.getUsers);
