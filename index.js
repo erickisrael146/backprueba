@@ -10,7 +10,7 @@ app.listen(PUERTO, function(){
 
 app.get('/', function(req, res){
     res.send('Hola, estas en la pagina inicial');
-    console.log('Se recibio una petición get');
+    console.log('Se recibio una petición get 2');
 });
 // app.get('/per', function(req, res){
 //     res.send('Hola, estas en la pagina per');
