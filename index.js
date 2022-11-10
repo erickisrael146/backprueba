@@ -20,4 +20,4 @@ app.get('/', function(req, res){
 // app.get('/', db.getUsers);
 
 // app.get('/persona', db.getUsers);
-app.use('/persona', db.getUsers);
+app.get('/persona', db.getUsers);
