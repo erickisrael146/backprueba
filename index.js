@@ -15,7 +15,7 @@ app.use(
 app.get('/', (request, response) => {
     response.json({ info: 'Node.js, Express, and Postgres API' })
 });
-// app.use('/users', usersRouter);
+app.use('/users', usersRouter);
 
 app.listen(PUERTO, function(){
     console.log('Servidor http correindo en el puerto 3002');

@@ -1,6 +1,8 @@
+// import * as db from "../query";
+
 var express = require('express');
 var router = express.Router();
-const db2 = require('./query');
+const db2 = require('../query');
 
 /* GET users listing. */
 router.get('/', db2.getUsers);
