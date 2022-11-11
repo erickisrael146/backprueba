@@ -2,6 +2,7 @@ var express = require('express');
 const bodyParser = require('body-parser');
 var app = express();
 const db = require('./query')
+var usersRouter = require('./routes/users');
 
 const PUERTO = 3002;
 
@@ -14,7 +15,7 @@ app.use(
 app.get('/', (request, response) => {
     response.json({ info: 'Node.js, Express, and Postgres API' })
 })
-app.get('/users', db.getUsers);
+app.use('/users', usersRouter);
 
 app.listen(PUERTO, function(){
     console.log('Servidor http correindo en el puerto 3002');
