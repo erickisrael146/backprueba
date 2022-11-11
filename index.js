@@ -1,20 +1,20 @@
 var express = require('express');
 const bodyParser = require('body-parser');
 var app = express();
-const db = require('./query')
+const db = require('./query');
 var usersRouter = require('./routes/users');
 
 const PUERTO = 3002;
 
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 app.use(
     bodyParser.urlencoded({
         extended: true,
     })
-)
+);
 app.get('/', (request, response) => {
     response.json({ info: 'Node.js, Express, and Postgres API' })
-})
+});
 app.use('/users', usersRouter);
 
 app.listen(PUERTO, function(){
