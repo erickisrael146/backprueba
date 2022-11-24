@@ -2,6 +2,7 @@ var express = require('express');
 const bodyParser = require('body-parser');
 var app = express();
 const db = require('./query');
+const cors=require('cors');
 var usersRouter = require('./routes/users');
 
 const PUERTO = 3002;
@@ -12,9 +13,11 @@ app.use(
         extended: true,
     })
 );
+app.use(cors());
 app.get('/', (request, response) => {
     response.json({ info: 'Node.js, Express, and Postgres API' })
 });
+app.post('/create', db.createUser);
 app.use('/users', usersRouter);
 
 app.listen(PUERTO, function(){
